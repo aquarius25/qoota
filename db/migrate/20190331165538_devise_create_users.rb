@@ -3,7 +3,7 @@
 class DeviseCreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
-      t.string :name, null: false
+      t.string :nickname, null: false
       t.text :profile
       ## Database authenticatable
       t.string :email,              null: false, default: ""
@@ -15,6 +15,14 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
       ## Rememberable
       t.datetime :remember_created_at
+
+
+      t.text :image
+      t.string :family_name
+      t.string :real_name
+      t.string :url_fb
+      t.string :url_twitter
+      t.string :url_github
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
