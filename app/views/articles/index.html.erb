@@ -36,56 +36,11 @@
   </div>
 </nav>
 
-<button type="button" class="btn btn-outline-secondary">Article Post</button>
-
-<div class="media">
-  <img class="d-flex mr-3" data-src="holder.js/64x64?theme=sky" alt="64x64" src="https://shops.aeonsquare.net/img/goods/A118/C/2327951119185_1.jpg" data-holder-rendered="true" style="width: 80px; height: 80px; margin: 20px 0 0 20px;">
-  <div class="card-body">
-    <h4 class="card-title">Article title</h4>
-    <h6 class="card-subtitle mb-2 text-muted">Article maker name</h6>
-    <p class="card-text">
-      Some quick example article explain to build on the article title
-      and make up the bulk of the article's content.
-    </p>
-    <a href="/" class="card-link">Article link</a>
-    <a href="/" class="card-link">Edit</a>
-    <a href="/" class="card-link">Delete</a>
-    <a href="/" class="card-link"><i class="fas fa-thumbs-up">4</i></a>
-    <a href="/" class="card-link"><i class="far fa-heart"></i>156</a>
+<% if user_signed_in? %>
+  <div class="article-post">
+    <button type="button" class="btn btn-outline-secondary float-right">Article Post</button>
   </div>
-</div>
+<% end %>
 
-<div class="media">
-  <img class="d-flex mr-3" data-src="holder.js/64x64?theme=sky" alt="64x64" src="https://shops.aeonsquare.net/img/goods/A118/C/2327951119185_1.jpg" data-holder-rendered="true" style="width: 80px; height: 80px; margin: 20px 0 0 20px;">
-  <div class="card-body">
-    <h4 class="card-title">Article title</h4>
-    <h6 class="card-subtitle mb-2 text-muted">Article maker name</h6>
-    <p class="card-text">
-      Some quick example article explain to build on the article title
-      and make up the bulk of the article's content.
-    </p>
-    <a href="/" class="card-link">Article link</a>
-    <a href="/" class="card-link">Edit</a>
-    <a href="/" class="card-link">Delete</a>
-    <a href="/" class="card-link"><i class="fas fa-thumbs-up">20k</i></a>
-    <a href="/" class="card-link"><i class="far fa-heart"></i>1</a>
-  </div>
-</div>
+<%= render partial: "article" %> <!-- hikisuu -->
 
-<div class="d-flex justify-content-center">
-<nav aria-label="...">
-  <ul class="pagination">
-    <li class="page-item disabled">
-      <a class="page-link" href="#!" tabindex="-1">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#!">1</a></li>
-    <li class="page-item active">
-      <a class="page-link" href="#!">2 <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#!">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#!">Next</a>
-    </li>
-  </ul>
-</nav>
-</div>
