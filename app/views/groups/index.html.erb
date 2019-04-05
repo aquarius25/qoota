@@ -6,8 +6,9 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
       <li class="nav-item">
-        <a class="nav-link" href="/">Profile</a>
+        <%= link_to "Profile", user_path(current_user.id), class: "nav-link" %>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/">Article</a>
@@ -16,11 +17,17 @@
         <a class="nav-link" href="/">Group</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/">Login</a>
+        <%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %>
+      </li>
+      <%= current_user.name %>
+      <% else %>
+      <li class="nav-item">
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/">Signup</a>
+        <%= link_to "Signup", new_user_registration_path, class: "nav-link" %>
       </li>
+      <% end %>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -29,11 +36,13 @@
   </div>
 </nav>
 
+<button type="button" class="btn btn-outline-secondary">Article Post</button>
+
 <div class="media">
   <img class="d-flex mr-3" data-src="holder.js/64x64?theme=sky" alt="64x64" src="https://shops.aeonsquare.net/img/goods/A118/C/2327951119185_1.jpg" data-holder-rendered="true" style="width: 80px; height: 80px; margin: 20px 0 0 20px;">
   <div class="card-body">
     <h4 class="card-title">Article title</h4>
-    <h6 class="card-subtitle mb-2 text-muted">Article subtitle</h6>
+    <h6 class="card-subtitle mb-2 text-muted">Article maker name</h6>
     <p class="card-text">
       Some quick example article explain to build on the article title
       and make up the bulk of the article's content.
@@ -41,8 +50,8 @@
     <a href="/" class="card-link">Article link</a>
     <a href="/" class="card-link">Edit</a>
     <a href="/" class="card-link">Delete</a>
-    <a href="/" class="card-link"><i class="fas fa-thumbs-up"></i></a>
-    <a href="/" class="card-link"><i class="far fa-heart"></i></a>
+    <a href="/" class="card-link"><i class="fas fa-thumbs-up">4</i></a>
+    <a href="/" class="card-link"><i class="far fa-heart"></i>156</a>
   </div>
 </div>
 
@@ -50,7 +59,7 @@
   <img class="d-flex mr-3" data-src="holder.js/64x64?theme=sky" alt="64x64" src="https://shops.aeonsquare.net/img/goods/A118/C/2327951119185_1.jpg" data-holder-rendered="true" style="width: 80px; height: 80px; margin: 20px 0 0 20px;">
   <div class="card-body">
     <h4 class="card-title">Article title</h4>
-    <h6 class="card-subtitle mb-2 text-muted">Article subtitle</h6>
+    <h6 class="card-subtitle mb-2 text-muted">Article maker name</h6>
     <p class="card-text">
       Some quick example article explain to build on the article title
       and make up the bulk of the article's content.
@@ -58,8 +67,8 @@
     <a href="/" class="card-link">Article link</a>
     <a href="/" class="card-link">Edit</a>
     <a href="/" class="card-link">Delete</a>
-    <a href="/" class="card-link"><i class="fas fa-thumbs-up"></i></a>
-    <a href="/" class="card-link"><i class="far fa-heart"></i></a>
+    <a href="/" class="card-link"><i class="fas fa-thumbs-up">20k</i></a>
+    <a href="/" class="card-link"><i class="far fa-heart"></i>1</a>
   </div>
 </div>
 
