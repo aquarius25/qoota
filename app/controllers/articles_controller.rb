@@ -3,17 +3,16 @@ class ArticlesController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @article = Article.new
-    @articles = Article.includes(:user).order("created_at ASC")
+    @articles = Article.includes(:user).order("created_at DESC")
   end
 
   def new
+    @article = Article.new
   end
 
   def create
-    @article = Article.new(:article_params)
-      @article.save
-    redirect_to root_
+    @article = Article.create(article_params)
+      redirect_to root_path
   end
 
   def edit
