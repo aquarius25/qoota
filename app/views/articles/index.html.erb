@@ -14,9 +14,6 @@
         <a class="nav-link" href="/">Article</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/">Group</a>
-      </li>
-      <li class="nav-item">
         <%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %>
       </li>
       <% else %>
@@ -37,7 +34,9 @@
 
 <% if user_signed_in? %>
   <div class="article-post">
-    <button type="button" class="btn btn-outline-secondary float-right">Article Post</button>
+    <button type="button" class="btn btn-outline-secondary float-right">
+      <%= link_to "Article New", new_article_path %>
+    </button>
   </div>
 <% end %>
 
