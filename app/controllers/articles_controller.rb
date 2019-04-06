@@ -24,13 +24,14 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article = Article.find(params[:id])
-      @article.update(article_params) if current_user.id == article.user_id
+    article = Article.find(params[:id])
+      article.update(article_params) if current_user.id == article.user_id
+    redirect_to root_path
   end
 
   def destroy
-    @article = Article.find(params[:id])
-      @article.destroy if current_user.id == article.user_id
+    article = Article.find(params[:id])
+      article.destroy if current_user.id == article.user_id
   end
 
 
