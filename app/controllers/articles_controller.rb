@@ -11,8 +11,12 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.create(article_params)
-      redirect_to root_path
+    @article = Article.new(article_params)
+      if @article.save
+        redirect_to root_path
+      else
+        render :edit
+      end
   end
 
   def edit

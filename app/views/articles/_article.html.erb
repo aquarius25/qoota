@@ -1,16 +1,19 @@
   <div class="media">
-    <img class="d-flex mr-3" src="https://shops.aeonsquare.net/img/goods/A118/C/2327951119185_1.jpg" style="width: 80px; height: 80px; margin: 20px 0 0 20px;">
+    <img class="d-flex mr-3" src="https://shops.aeonsquare.net/img/goods/A118/C/2327951119185_1.jpg" style="width: 80px; height: 80px; margin: 60px 0 0 25px;">
     <div class="card-body">
       <h4 class="card-title">
         <%= article.title %>
       </h4>
       <h6 class="card-subtitle mb-2 text-muted">
-        <%= article.user.nickname %>
+        by <%= article.user.nickname %>
       </h6>
       <p class="card-text">
         <%= article.explain %>
       </p>
-      <%= link_to "Article link", article_path(article.id), class: "card-link" %>
+      <%= link_to "More Read...", article_path(article.id), class: "card-link" %>
+      <p class="card-text">
+        <%= article.created_at %>
+      </p>
       <% if user_signed_in? && current_user.id == article.user_id %>
         <%= link_to "Edit", edit_article_path(article.id), class: "card-link" %>
         <%= link_to "Delete", article_path(article.id), method: :delete, class: "card-link" %>
