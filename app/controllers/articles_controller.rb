@@ -32,6 +32,7 @@ class ArticlesController < ApplicationController
   def destroy
     article = Article.find(params[:id])
       article.destroy if current_user.id == article.user_id
+    redirect_to root_path
   end
 
 
