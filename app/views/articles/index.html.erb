@@ -1,0 +1,14 @@
+<%= render partial: "shared/header" %>
+
+<% if user_signed_in? %>
+  <div class="article-post">
+    <button type="button" class="btn btn-outline-secondary float-right">
+      <%= link_to "Article New", new_article_path %>
+    </button>
+  </div>
+<% end %>
+
+<% @articles.each do |article| %>
+  <%= render partial: "article", locals: { article: article } %>
+<% end %>
+
