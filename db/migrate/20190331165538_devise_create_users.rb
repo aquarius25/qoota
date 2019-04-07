@@ -17,12 +17,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.datetime :remember_created_at
 
 
-      t.text :image
+      t.string :image
       t.string :family_name
       t.string :real_name
-      t.string :url_fb
-      t.string :url_twitter
-      t.string :url_github
+      t.string :url_fb, unique: true
+      t.string :url_twitter, unique: true
+      t.string :url_github, unique: true
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
