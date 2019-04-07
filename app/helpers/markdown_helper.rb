@@ -19,4 +19,14 @@ module MarkdownHelper
       @markdown = Redcarpet::Markdown.new(renderer, extensions)
     @markdown.render(text).html_safe
   end
+
+  def toc(text)
+    toc_option = {
+      nesting_level: 2
+    }
+
+    toc_renderer = Redcarpet::Render::HTML_TOC.new
+    toc = Redcarpet::Markdown.new(toc_renderer, toc_option)
+    toc.render(text).html_safe
+  end
 end
