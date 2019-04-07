@@ -67,4 +67,5 @@ gem "devise"
 gem 'jquery-rails'
 gem 'bootstrap'
 gem "redcarpet"
-
+gem "rouge"
+gem 'bootstrap-sass'
