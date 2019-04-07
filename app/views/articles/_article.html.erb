@@ -8,11 +8,11 @@
         by <%= article.user.nickname %>
       </h6>
       <p class="card-text">
-        <%= article.explain %>
+        Overview: <%= article.explain %>
       </p>
       <%= link_to "More Read...", article_path(article.id), class: "card-link" %>
       <p class="card-text">
-        <%= article.created_at %>
+        <%= shape_create_time(article.created_at) %>
       </p>
       <% if user_signed_in? && current_user.id == article.user_id %>
         <%= link_to "Edit", edit_article_path(article.id), class: "card-link" %>
