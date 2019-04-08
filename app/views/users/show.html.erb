@@ -19,7 +19,7 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <%= link_to "article", root_path, class:"nav-link" %>
+            <%= link_to "All_Articles", root_path, class:"nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Edit_Profile", edit_user_registration_path, class:"nav-link" %>
@@ -51,6 +51,9 @@
                   <%= @user.real_name %>
                   <%= @user.family_name %>
                 </h3>
+                <h5 class="description title">
+                  <%= @user.nickname %>
+                </h5>
                 <a href="<%= @user.url_fb %>" class="btn btn-just-icon btn-link btn-dribbble"><i class="fa fa-facebook-square"></i></a>
                 <a href="<%= @user.url_twitter %>" class="btn btn-just-icon btn-link btn-twitter"><i class="fa fa-twitter"></i></a>
                 <a href="<%= @user.url_github %>" class="btn btn-just-icon btn-link btn-pinterest"><i class="fa fa-github"></i></a>
