@@ -2,11 +2,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
-  <link rel="stylesgeet" href="https://rawgit.com/creativetimofficial/material-kit/master/assets/css/material-kit.css">
 </head>
 
-<body class="profile-page">
+<div class="profile-page">
   <nav class="navbar navbar-color-on-scroll navbar-transparent  fixed-top  navbar-expand-lg"  color-on-scroll="100"  id="sectionsNav">
     <div class="container">
       <div class="navbar-translate">
@@ -21,7 +19,7 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <%= link_to "article", root_path, class:"nav-link" %>
+            <%= link_to "All_Articles", root_path, class:"nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Edit_Profile", edit_user_registration_path, class:"nav-link" %>
@@ -42,19 +40,29 @@
           <div class="col-md-6 ml-auto mr-auto">
             <div class="profile">
               <div class="avatar">
-                <img src="https://pbs.twimg.com/media/DqLENkCU4AEm3SZ.jpg" alt="Circle Image" class="img-raised rounded-circle img-fluid">
+                <% if @user.image.present? %>
+                  <%= image_tag (@user.image.url), alt:"Circle Image", class:"img-raised rounded-circle img-fluid" %>
+                <% else %>
+                  <%= image_tag ("change.png"), alt:"Circle Image", class:"img-raised rounded-circle img-fluid" %>
+                <% end %>
               </div>
               <div class="name">
-                <h3 class="title">Aqua Hara</h3>
-                <a href="#pablo" class="btn btn-just-icon btn-link btn-dribbble"><i class="fa fa-facebook-square"></i></a>
-                <a href="#pablo" class="btn btn-just-icon btn-link btn-twitter"><i class="fa fa-twitter"></i></a>
-                <a href="#pablo" class="btn btn-just-icon btn-link btn-pinterest"><i class="fa fa-github"></i></a>
+                <h3 class="title">
+                  <%= @user.real_name %>
+                  <%= @user.family_name %>
+                </h3>
+                <h5 class="description title">
+                  <%= @user.nickname %>
+                </h5>
+                <a href="<%= @user.url_fb %>" class="btn btn-just-icon btn-link btn-dribbble"><i class="fa fa-facebook-square"></i></a>
+                <a href="<%= @user.url_twitter %>" class="btn btn-just-icon btn-link btn-twitter"><i class="fa fa-twitter"></i></a>
+                <a href="<%= @user.url_github %>" class="btn btn-just-icon btn-link btn-pinterest"><i class="fa fa-github"></i></a>
               </div>
             </div>
           </div>
         </div>
         <div class="description text-center">
-          <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
+          <%= simple_format(@user.profile) %>
         </div>
         <div class="row">
           <div class="col-md-6 ml-auto mr-auto">
@@ -110,10 +118,11 @@
   </div>
 
   <footer class="footer text-center">
+    <p>aquaman</p>
   </footer>
 
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
-</body>
+</div>
