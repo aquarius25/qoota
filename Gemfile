@@ -69,3 +69,5 @@ gem 'bootstrap'
 gem "redcarpet"
 gem "rouge"
 gem 'bootstrap-sass'
+gem 'carrierwave'
+gem 'mini_magick'

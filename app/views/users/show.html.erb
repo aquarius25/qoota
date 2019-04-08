@@ -1,158 +1,128 @@
 <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
-    <link rel="stylesgeet" href="https://rawgit.com/creativetimofficial/material-kit/master/assets/css/material-kit.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
-<body class="profile-page">
-    <nav class="navbar navbar-color-on-scroll navbar-transparent    fixed-top  navbar-expand-lg "  color-on-scroll="100"  id="sectionsNav">
-        <div class="container">
-            <div class="navbar-translate">
-                <a class="navbar-brand" href="/">Qoota</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
+<div class="profile-page">
+  <nav class="navbar navbar-color-on-scroll navbar-transparent  fixed-top  navbar-expand-lg"  color-on-scroll="100"  id="sectionsNav">
+    <div class="container">
+      <div class="navbar-translate">
+        <%= link_to "Qoota", root_path, class: "navbar-brand" %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
 
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.facebook.com/CreativeTim" target="_blank">
-                            <i class="fa fa-edit"></i>edit
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"  href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
-                            <i class="fa fa-power-off"></i>logout
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <%= link_to "All_Articles", root_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Edit_Profile", edit_user_registration_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Logout", destroy_user_session_path, class:"nav-link" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <div class="page-header header-filter" data-parallax="true" style="background-image:url('http://wallpapere.org/wp-content/uploads/2012/02/black-and-white-city-night.png');"></div>
-    <div class="main main-raised">
-        <div class="profile-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 ml-auto mr-auto">
-                       <div class="profile">
-                            <div class="avatar">
-                                <img src="https://pbs.twimg.com/media/DqLENkCU4AEm3SZ.jpg" alt="Circle Image" class="img-raised rounded-circle img-fluid">
-                            </div>
-                            <div class="name">
-                                <h3 class="title">Aqua Hara</h3>
-                                <h6>Pragrammer/Baller</h6>
-                                <a href="#pablo" class="btn btn-just-icon btn-link btn-dribbble"><i class="fa fa-facebook-square"></i></a>
-                                <a href="#pablo" class="btn btn-just-icon btn-link btn-twitter"><i class="fa fa-twitter"></i></a>
-                                <a href="#pablo" class="btn btn-just-icon btn-link btn-pinterest"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="description text-center">
-                    <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 ml-auto mr-auto">
-                        <div class="profile-tabs">
-                          <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#follow" role="tab" data-toggle="tab">
-                                  <i class="fas fa-crown"></i>
-                                    follow
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#follower" role="tab" data-toggle="tab">
-                                  <i class="fas fa-walking"></i>
-                                    follower
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#article" role="tab" data-toggle="tab">
-                                  <i class="fas fa-pen-nib"></i>
-                                  Your-Article
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#favorite" role="tab" data-toggle="tab">
-                                  <i class="material-icons">favorite</i>
-                                    Like
-                                </a>
-                            </li>
-                          </ul>
-                        </div>
-                    </div>
-                </div>
-
-          <div class="tab-content tab-space">
-            <div class="tab-pane active text-left gallery" id="follow">
-              <div class="row">
+  <div class="page-header header-filter" data-parallax="true" style="background-image:url('http://wallpapere.org/wp-content/uploads/2012/02/black-and-white-city-night.png');"></div>
+  <div class="main main-raised">
+    <div class="profile-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 ml-auto mr-auto">
+            <div class="profile">
+              <div class="avatar">
+                <% if @user.image.present? %>
+                  <%= image_tag (@user.image.url), alt:"Circle Image", class:"img-raised rounded-circle img-fluid" %>
+                <% else %>
+                  <%= image_tag ("change.png"), alt:"Circle Image", class:"img-raised rounded-circle img-fluid" %>
+                <% end %>
+              </div>
+              <div class="name">
+                <h3 class="title">
+                  <%= @user.real_name %>
+                  <%= @user.family_name %>
+                </h3>
+                <h5 class="description title">
+                  <%= @user.nickname %>
+                </h5>
+                <a href="<%= @user.url_fb %>" class="btn btn-just-icon btn-link btn-dribbble"><i class="fa fa-facebook-square"></i></a>
+                <a href="<%= @user.url_twitter %>" class="btn btn-just-icon btn-link btn-twitter"><i class="fa fa-twitter"></i></a>
+                <a href="<%= @user.url_github %>" class="btn btn-just-icon btn-link btn-pinterest"><i class="fa fa-github"></i></a>
               </div>
             </div>
-            <div class="tab-pane text-center gallery" id="follower">
-                <div class="row">
-                </div>
-            </div>
-
-            <div class="tab-pane text-left gallery" id="article">
-                <div class="row">
-                  <div class="media">
-                    <img class="d-flex mr-3" data-src="holder.js/64x64?theme=sky" alt="64x64" src="https://shops.aeonsquare.net/img/goods/A118/C/2327951119185_1.jpg" data-holder-rendered="true" style="width: 80px; height: 80px; margin: 20px 0 0 20px;">
-                    <div class="card-body">
-                      <h4 class="card-title">Article title</h4>
-                      <h6 class="card-subtitle mb-2 text-muted">Article maker name</h6>
-                      <p class="card-text">
-                        Some quick example article explain to build on the article title
-                        and make up the bulk of the article's content.
-                      </p>
-                      <a href="/" class="card-link">Article link</a>
-                      <a href="/" class="card-link">Edit</a>
-                      <a href="/" class="card-link">Delete</a>
-                      <a href="/" class="card-link"><i class="fas fa-thumbs-up">4</i></a>
-                      <a href="/" class="card-link"><i class="far fa-heart"></i>156</a>
-                    </div>
-                  </div>
-                </div>
-            </div>
-            <div class="tab-pane text-left gallery" id="favorite">
-                <div class="row">
-                  <div class="media">
-                    <img class="d-flex mr-3" data-src="holder.js/64x64?theme=sky" alt="64x64" src="https://shops.aeonsquare.net/img/goods/A118/C/2327951119185_1.jpg" data-holder-rendered="true" style="width: 80px; height: 80px; margin: 20px 0 0 20px;">
-                    <div class="card-body">
-                      <h4 class="card-title">Article title</h4>
-                      <h6 class="card-subtitle mb-2 text-muted">Article maker name</h6>
-                      <p class="card-text">
-                        Some quick example article explain to build on the article title
-                        and make up the bulk of the article's content.
-                      </p>
-                      <a href="/" class="card-link">Article link</a>
-                      <a href="/" class="card-link">Edit</a>
-                      <a href="/" class="card-link">Delete</a>
-                      <a href="/" class="card-link"><i class="fas fa-thumbs-up">4</i></a>
-                      <a href="/" class="card-link"><i class="far fa-heart"></i>156</a>
-                    </div>
-                  </div>
-                </div>
+          </div>
+        </div>
+        <div class="description text-center">
+          <%= simple_format(@user.profile) %>
+        </div>
+        <div class="row">
+          <div class="col-md-6 ml-auto mr-auto">
+            <div class="profile-tabs">
+              <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link" href="#follow" role="tab" data-toggle="tab">
+                    <i class="fas fa-crown"></i>follow
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#follower" role="tab" data-toggle="tab">
+                    <i class="fas fa-walking"></i>follower
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#article" role="tab" data-toggle="tab">
+                    <i class="fas fa-pen-nib"></i>Your-Article
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#favorite" role="tab" data-toggle="tab">
+                    <i class="material-icons">favorite</i>Like
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
-
-
-            </div>
         </div>
-    </div>
 
-    <footer class="footer text-center ">
-    </footer>
+        <div class="tab-content tab-space">
+          <div class="tab-pane active text-left gallery" id="follow">
+            <div class="row">
+            </div>
+          </div>
+          <div class="tab-pane text-center gallery" id="follower">
+            <div class="row">
+            </div>
+          </div>
+          <div class="tab-pane text-left gallery" id="article">
+            <div class="row">
+            </div>
+          </div>
+          <div class="tab-pane text-left gallery" id="favorite">
+            <div class="row">
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer text-center">
+    <p>aquaman</p>
+  </footer>
 
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
-</body>
+  <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+</div>
