@@ -1,24 +1,27 @@
-# README
+# Qoota
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview
+Airticle post site like Qiita.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## All functions
+- 記事一覧表示機能
+-- article_index内で配列で実装
+- 記事詳細表示機能
+-- user_idで記事の詳細を分けた
+- 記事投稿機能
+-- create機能（controller内）
+- 管理ユーザー登録機能
+-- gem "devise"を使った
+- 管理ユーザーログイン機能
+-- gem "devise"を使った
+- 画像ファイルアップロード機能
+-- gem "carrierwave","minimajick"を使った
+- DBテーブルのrelation機能
+-- 1対多,多対多（予定）を使う（model内）
+- DBトランザクションの制御機能
+-- migration_fileでDBを構築
+- pagenation機能（予定）
+-- gem "kaminari"を使う
+- 単体テスト機能（予定）
+-- rspecを使う
+- 統合テスト機能（予定）
