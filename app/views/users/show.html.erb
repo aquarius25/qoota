@@ -41,7 +41,7 @@
             <div class="profile">
               <div class="avatar">
                 <% if @user.image.present? %>
-                  <%= image_tag (@user.image), alt:"Circle Image", class:"img-raised rounded-circle img-fluid" %>
+                  <%= image_tag (@user.image.url), alt:"Circle Image", class:"img-raised rounded-circle img-fluid" %>
                 <% else %>
                   <%= image_tag ("change.png"), alt:"Circle Image", class:"img-raised rounded-circle img-fluid" %>
                 <% end %>
