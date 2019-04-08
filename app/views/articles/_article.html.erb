@@ -1,26 +1,26 @@
   <div class="media">
-    <%= image_tag(article.user.image.url, class:"d-flex mr-3", style:"width: 100px; height: 100px; margin: 60px 0 0 25px;") %>
+    <%= link_to user_path(article.user_id) do %>
+      <%= image_tag(article.user.image.url, class:"d-flex mr-3", style:"width: 100px; height: 100px; margin: 60px 0 0 25px;") %>
+    <% end %>
     <div class="card-body">
       <h4 class="card-title">
         <%= article.title %>
       </h4>
-      <h6 class="card-subtitle mb-2 text-muted">
-        by <%= article.user.nickname %>
+      <h6 class="card-subtitle mb-2 text-muted">by
+        <%= link_to user_path(article.user_id) do %>
+          <%= article.user.nickname %>
+        <% end %>
       </h6>
       <p class="card-text">
         Overview: <%= article.explain %>
       </p>
-      <%= link_to "More Read...", article_path(article.id), class: "card-link" %>
+      <%= link_to "Read More...", article_path(article.id), class: "card-link" %>
       <p class="card-text">
         <%= shape_create_time(article.created_at) %>
       </p>
       <% if user_signed_in? && current_user.id == article.user_id %>
         <%= link_to "Edit", edit_article_path(article.id), class: "card-link" %>
         <%= link_to "Delete", article_path(article.id), method: :delete, class: "card-link" %>
-      <% end %>
-
-      <%= link_to href: "", class: "card-link" do %>
-        <i class="fas fa-thumbs-up">4</i>
       <% end %>
       <%= link_to href: "", class: "card-link" do %>
         <i class="far fa-heart"></i>
