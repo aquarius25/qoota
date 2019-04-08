@@ -22,7 +22,7 @@
         <%= link_to "Edit", edit_article_path(article.id), class: "card-link" %>
         <%= link_to "Delete", article_path(article.id), method: :delete, class: "card-link" %>
       <% end %>
-      <%= link_to href: "", class: "card-link" do %>
+      <%= link_to root_path, class: "card-link" do %>
         <i class="far fa-heart"></i>
       <% end %>
     </div>
