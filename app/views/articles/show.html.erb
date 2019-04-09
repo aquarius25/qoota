@@ -6,8 +6,13 @@
 </p>
 
 <p>
+  <strong>Overview:</strong>
+  <%= @article.explain %>
+</p>
+
+<p>
   <strong>Content:</strong>
-  <%= markdown(@article.text) %>
+  <%= markdown(@article.text).html_safe %>
 </p>
 
 <%= link_to 'Back', root_path %>

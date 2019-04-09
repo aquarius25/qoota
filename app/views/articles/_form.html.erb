@@ -22,18 +22,4 @@
       </div>
     </div>
   <% end %>
-
-  <script>
-    window.onload = function() {
-      new Vue({
-      el: '#editor',
-      data: {
-      input: '#{j @article.text }',
-    },
-      filters: {
-      marked: marked,
-    },
-    });
-    };
-  </script>
 </div>

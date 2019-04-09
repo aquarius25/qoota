@@ -1,4 +1,5 @@
 module MarkdownHelper
+
   def markdown(text)
       options = {
           filter_html:     true,
