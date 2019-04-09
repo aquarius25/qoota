@@ -66,9 +66,9 @@ gem 'sprockets', '3.7.2'
 gem "devise"
 gem 'jquery-rails'
 gem 'bootstrap'
-gem "redcarpet", '~> 2.3.0'
-gem 'coderay'
 gem "rouge"
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'qiita-markdown'
+gem 'github-linguist'
