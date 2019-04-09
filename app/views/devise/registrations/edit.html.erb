@@ -4,13 +4,13 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :nickname, autofocus: true %>
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname, autofocus: true, placeholder: "nickname" %>
   </div>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -19,7 +19,7 @@
 
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "pass" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
@@ -28,13 +28,51 @@
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "pass again" %>
   </div>
 
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+    <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "current_pass" %>
   </div>
+
+
+    <div class="field">
+    <%= f.label :Last_Name %></br>
+    <%= f.text_field :family_name, placeholder: "名字" %></dr>
+  </div>
+
+  <div class="field">
+    <%= f.label :First_Name %></br>
+    <%= f.text_field :real_name, placeholder: "本名" %></dr>
+  </div>
+
+  <div class="field">
+    <%= f.label :Your_Icon %></br>
+    <%= f.file_field :image %></br>
+  </div>
+
+    <div class="field">
+    <%= f.label :Profile %></br>
+    <%= f.text_field :profile, placeholder: "profile" %></dr>
+  </div>
+
+  <div class="field">
+    <%= f.label :FaceBook %></br>
+    <%= f.text_field :url_fb, placeholder: "FaceBook_Link" %></dr>
+  </div>
+
+  <div class="field">
+    <%= f.label :Twitter %></br>
+    <%= f.text_field :url_twitter, placeholder: "Twitter_Link" %></dr>
+  </div>
+
+  <div class="field">
+    <%= f.label :GitHub %></br>
+    <%= f.text_field :url_github, placeholder: "GitHub_Link" %></dr>
+  </div>
+
+
 
   <div class="actions">
     <%= f.submit "Update" %>
