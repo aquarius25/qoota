@@ -18,7 +18,7 @@
       <textarea name="article[text]" id="n" class="form-control" rows="20" v-model='input' debounce='50' placeholder="Article main content" style="width: 50%;">
       </textarea>
 <!-- js auto text start-->
-      <div class="card smooth-scroll" style="height: 420px; width: 50%;">
+      <div class="card" style="height: 420px; width: 50%; overflow: scroll;">
         <div class="card-body">
           <div class="di_inline_t preview">
             <div v-html='input | marked' style: :"width: 650px;">
