@@ -6,8 +6,14 @@
 </p>
 
 <p>
-  <strong>Content:</strong>
-  <%= markdown(@article.text) %>
+  <strong>Overview:</strong>
+  <%= @article.explain %>
 </p>
 
+<p>
+  <strong>Content:</strong>
+  <%= qiita_markdown(@article.text) %>
+</p>
+
+<%= link_to "Edit", edit_article_path(@article.id) %> |
 <%= link_to 'Back', root_path %>
