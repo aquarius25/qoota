@@ -21,12 +21,14 @@
           <li class="nav-item">
             <%= link_to "All_Articles", root_path, class:"nav-link" %>
           </li>
+          <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to "Edit_Profile", edit_user_registration_path, class:"nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Logout", destroy_user_session_path, class:"nav-link" %>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"nav-link" %>
           </li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -64,6 +66,9 @@
         <div class="description text-center">
           <%= simple_format(@user.profile) %>
         </div>
+        <div class="description title text-center">
+          Article: <%= @user.articles.count %> posts.
+        </div>
         <div class="row">
           <div class="col-md-6 ml-auto mr-auto">
             <div class="profile-tabs">
@@ -79,8 +84,8 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="#article" role="tab" data-toggle="tab">
-                    <i class="fas fa-pen-nib"></i>Your-Article
+                  <a class="nav-link" href="#article" role="tab" data-toggle="tab">
+                    <i class="fas fa-pen-nib"></i>Article
                   </a>
                 </li>
                 <li class="nav-item">
@@ -103,7 +108,14 @@
             </div>
           </div>
           <div class="tab-pane text-left gallery" id="article">
-            <div class="row">
+            <% @articles.each do |article| %>
+              <%= link_to article_path(article.id), class:"d-block" do %>
+                <%= article.title %>
+              <% end%>
+                <%= article.explain %>
+            <% end %>
+            <div class="d-flex justify-content-center">
+              <%= paginate(@articles) %>
             </div>
           </div>
           <div class="tab-pane text-left gallery" id="favorite">
