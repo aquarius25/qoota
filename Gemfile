@@ -70,5 +70,5 @@ gem "rouge"
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'qiita-markdown'
-gem 'github-linguist'
+gem 'redcarpet'
+gem 'rouge'
