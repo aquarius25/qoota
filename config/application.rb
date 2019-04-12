@@ -17,5 +17,3 @@ module Qoota
     # the framework and any gems in your application.
   end
 end
-
-config.autoload_paths += %W(#{config.root}/lib/)
