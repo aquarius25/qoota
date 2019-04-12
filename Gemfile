@@ -72,4 +72,3 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'qiita-markdown'
 gem 'github-linguist'
-gem "kaminari"

@@ -108,15 +108,12 @@
             </div>
           </div>
           <div class="tab-pane text-left gallery" id="article">
-            <% @articles.each do |article| %>
+            <% @user.articles.each do |article| %>
               <%= link_to article_path(article.id), class:"d-block" do %>
                 <%= article.title %>
               <% end%>
                 <%= article.explain %>
             <% end %>
-            <div class="d-flex justify-content-center">
-              <%= paginate(@articles) %>
-            </div>
           </div>
           <div class="tab-pane text-left gallery" id="favorite">
             <div class="row">
