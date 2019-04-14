@@ -1,8 +1,22 @@
 <%= render partial: "shared/header" %>
 
-<div class="text-right">
-  <button type="button" class="btn btn-secondary btn-sm" id="how-to-markdown" style="margin-right: 30px;">How to markdown</button>
+<div class="text-right" id="app">
+  <button @click="show = !show" type="button" class="btn btn-secondary btn-sm" style="margin-right: 30px;">How to markdown</button>
+  <div>
+    <p v-if="show">aaaa</p>
+  </div>
 </div>
+
+<%# how to markdown preview %>
+<script>
+  var app = new Vue ({
+    el: '#app',
+    data: {
+      show: true
+    },
+  });
+</script>
+
 
 <div class="container">
   <div class="">
@@ -47,7 +61,7 @@
 <%= link_to 'Back', root_path %>
 
 
-
+<%# auto preview like qiita %>
 <script type="text/javascript">
   window.onload = function() {
       new Vue({
