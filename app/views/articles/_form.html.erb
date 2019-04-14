@@ -1,8 +1,7 @@
 <%= render partial: "shared/header" %>
 
 <div class="text-right">
-  <button type="button" class="btn btn-secondary btn-sm">Select Image</button>
-  <button type="button" class="btn btn-secondary btn-sm">How to markdown</button>
+  <button type="button" class="btn btn-secondary btn-sm" id="how-to-markdown" style="margin-right: 30px;">How to markdown</button>
 </div>
 
 <div class="container">
@@ -14,7 +13,7 @@
       </div>
       <div class="form-group">
         <%= f.label :Overview %><br />
-        <%= f.text_field :explain, class:"form-control", id:"formGroupExampleInput2", placeholder:"a few article explain" %>
+        <%= f.text_field :explain, class:"form-control", id:"formGroupExampleInput2", placeholder:"Your article overview" %>
       </div>
 
   <!-- content text -->
