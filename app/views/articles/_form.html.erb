@@ -1,22 +1,6 @@
 <%= render partial: "shared/header" %>
 
-<div class="text-right" id="app">
-  <button @click="show = !show" type="button" class="btn btn-secondary btn-sm" style="margin-right: 30px;">How to markdown</button>
-  <div>
-    <p v-if="show">aaaa</p>
-  </div>
-</div>
-
-<%# how to markdown preview %>
-<script>
-  var app = new Vue ({
-    el: '#app',
-    data: {
-      show: false
-    },
-  });
-</script>
-
+<%= render partial: "markdown_collapse" %>
 
 <div class="container">
   <div class="">
