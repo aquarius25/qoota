@@ -22,9 +22,15 @@
       </li>
       <% end %>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search Article" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+
+    <%= search_form_for @search, html: { class: 'form-inline my-2 my-lg-0' } do |f| %>
+      <div class="field">
+        <%= f.text_field :title_cont, placeholder:"Search Article", class:"form-control mr-sm-2" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Search", class:"btn btn-outline-success my-2 my-sm-0" %>
+      </div>
+    <% end %>
+    
   </div>
 </nav>
