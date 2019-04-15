@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: qoota_production
-  username: qoota
-  password: <%= ENV['QOOTA_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
