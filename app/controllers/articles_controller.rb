@@ -3,7 +3,8 @@ class ArticlesController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @articles = Article.includes(:user).order("created_at DESC")
+    @search = Article.search(params[:q])
+    @articles = @search.result.includes(:user).order("created_at DESC")
   end
 
   def new
