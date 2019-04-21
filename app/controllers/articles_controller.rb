@@ -3,7 +3,8 @@ class ArticlesController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @articles = Article.includes(:user).order("created_at DESC")
+    @search = Article.search(params[:q])
+    @articles = @search.result.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -30,7 +31,7 @@ class ArticlesController < ApplicationController
   def update
     article = Article.find(params[:id])
       article.update(article_params) if current_user.id == article.user_id
-    redirect_to root_path
+    redirect_to article_path(article.id)
   end
 
   def destroy

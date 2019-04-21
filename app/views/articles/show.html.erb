@@ -9,10 +9,10 @@
   <strong>Overview:</strong>
   <%= @article.explain %>
 </p>
-
+<code></code>
 <p>
   <strong>Content:</strong>
-  <%= qiita_markdown(@article.text) %>
+  <%= markdown(@article.text) %>
 </p>
 
 <% if user_signed_in? && current_user.id == @article.user_id %>
