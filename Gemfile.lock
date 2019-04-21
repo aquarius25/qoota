@@ -295,7 +295,6 @@ DEPENDENCIES
   capybara (>= 2.15)
   carrierwave
   chromedriver-helper
-  coderay
   coffee-rails (~> 4.2)
   compass-rails (= 3.1.0)
   devise
