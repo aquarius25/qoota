@@ -1,0 +1,32 @@
+<%= form_with(model: qiita_item, local: true) do |form| %>
+  <% if qiita_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(qiita_item.errors.count, "error") %> prohibited this qiita_item from being saved:</h2>
+
+      <ul>
+      <% qiita_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :like_count %>
+    <%= form.number_field :like_count %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

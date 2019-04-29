@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @qiita_item.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @qiita_item.url %>
+</p>
+
+<p>
+  <strong>Like count:</strong>
+  <%= @qiita_item.like_count %>
+</p>
+
+<%= link_to 'Edit', edit_qiita_item_path(@qiita_item) %> |
+<%= link_to 'Back', qiita_items_path %>
