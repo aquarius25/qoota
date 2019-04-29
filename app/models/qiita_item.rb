@@ -1,4 +1,5 @@
 require "json"
+
 class QiitaItem < ApplicationRecord
   def self.get
     url = 'https://qiita.com'
@@ -13,6 +14,6 @@ class QiitaItem < ApplicationRecord
     json = JSON.parse(response.body) # （4）QiitaのAPIから返ってきたJSONをパースしている
     json.sort_by { |i| i['created_at']}.reverse.map do |item| # （5）記事を一旦create_atの降順でソートして記事タイトル／URL／いいね数のハッシュ形式にしたものを新しい配列をmapメソッドで生成しています。最後のtake(20)は、いいね数の上位20件を取得している
       { title: item['title'], url: item['url'], likes_count: item['likes_count'] }
-    end.take(100)
+    end.take(50)
   end
 end
