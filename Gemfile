@@ -83,5 +83,6 @@ gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'redcarpet'
-gem 'rouge'
 gem 'ransack'
+gem "faraday"
+gem "kaminari"

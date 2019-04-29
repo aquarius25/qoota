@@ -11,6 +11,9 @@
         <%= link_to "Profile", user_path(current_user.id), class: "nav-link" %>
       </li>
       <li class="nav-item">
+        <%= link_to "My_article", root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
         <%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %>
       </li>
       <% else %>
@@ -21,16 +24,10 @@
         <%= link_to "Signup", new_user_registration_path, class: "nav-link" %>
       </li>
       <% end %>
+      <li class="nav-item">
+        <%= link_to "Qiita", qiita_items_path, class: "nav-link" %>
+      </li>
     </ul>
-
-    <%= search_form_for @search, html: { class: 'form-inline my-2 my-lg-0' } do |f| %>
-      <div class="field">
-        <%= f.text_field :title_cont, placeholder:"Search Article", class:"form-control mr-sm-2" %>
-      </div>
-      <div class="actions">
-        <%= f.submit "Search", class:"btn btn-outline-success my-2 my-sm-0" %>
-      </div>
-    <% end %>
     
   </div>
 </nav>
