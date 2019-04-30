@@ -20,14 +20,15 @@ Airticle post site like Qiita.
   - 1対多,多対多（予定）を使う（model内）
 - DBトランザクションの制御機能
   - migration_fileでDBを構築
-- pagenation機能（予定）
+- pagenation機能
   - gem "kaminari"を使う
 - 単体テスト機能（予定）
   - rspecを使う
 - 統合テスト機能（予定）
 
 ## All Technology
-
+- Qiitaの記事をAPI(GET)を使用して持ってきた
+  - gem "faraday"を使用
 
 ## DB tables
 

@@ -4,13 +4,13 @@ class ArticlesController < ApplicationController
 
   def index
     @search = Article.search(params[:q])
-    @articles = @search.result.includes(:user).order("created_at DESC")
+    @articles = @search.result.includes(:user).page(params[:page]).per(10).order("created_at DESC")
   end
 
   def my_article
     @article = Article.where(user_id: current_user.id)
     @search = @article.search(params[:q])
-    @articles = @search.result.includes(:user).order("created_at DESC")
+    @articles = @search.result.includes(:user).page(params[:page]).per(5).order("created_at DESC")
   end
 
   def new
