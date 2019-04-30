@@ -7,6 +7,12 @@ class ArticlesController < ApplicationController
     @articles = @search.result.includes(:user).order("created_at DESC")
   end
 
+  def my_article
+    @article = Article.where(user_id: current_user.id)
+    @search = @article.search(params[:q])
+    @articles = @search.result.includes(:user).order("created_at DESC")
+  end
+
   def new
     @article = Article.new
   end

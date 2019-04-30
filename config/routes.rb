@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   }
   root "articles#index"
   resources :users, only: [:show]
-  resources :articles
+  resources :articles do
+    member do
+      get :my_article
+    end
+  end
   resources :qiita_items
 end

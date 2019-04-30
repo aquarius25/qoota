@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+  <div class="article-post">
+    <div class="float-left">Hello!! <%= current_user.nickname %></div>
+    <button type="button" class="btn btn-outline-secondary float-right">
+      <%= link_to "Article New", new_article_path %>
+    </button>
+  </div>
+<% else %>
+  <p>You can post articles, when you signup or login !!</p>
+<% end %>
