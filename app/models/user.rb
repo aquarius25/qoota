@@ -9,4 +9,5 @@ class User < ApplicationRecord
          validates :profile, length: { maximum: 500 }
 
   has_many :articles
+  has_many :todos
 end
