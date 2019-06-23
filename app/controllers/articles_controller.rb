@@ -5,6 +5,10 @@ class ArticlesController < ApplicationController
   def index
     @search = Article.search(params[:q])
     @articles = @search.result.includes(:user).page(params[:page]).per(10).order("created_at DESC")
+    @tag_articles = Article.all.includes(:user).order("created_at DESC")
+    if params[:tag_name]
+      @tag_article = @tag_articles.tagged_with("#{params[:tag_name]}")
+    end
   end
 
   def my_article
