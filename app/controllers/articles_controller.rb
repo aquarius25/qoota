@@ -49,7 +49,7 @@ class ArticlesController < ApplicationController
 
 private
   def article_params
-    params.require(:article).permit(:title, :explain, :text).merge(user_id: current_user.id)
+    params.require(:article).permit(:title, :explain, :text, :interest_list).merge(user_id: current_user.id)
   end
 
   def move_to_index

@@ -1,5 +1,11 @@
 <%= render partial: "shared/header" %>
 
+<p><% if user_signed_in? && current_user.id == @article.user_id %>
+  <%= link_to "Edit", edit_article_path(@article.id) %> |
+<% end %>
+
+<%= link_to 'Back', root_path %></p>
+
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
@@ -9,7 +15,7 @@
   <strong>Overview:</strong>
   <%= @article.explain %>
 </p>
-<code></code>
+
 <p>
   <strong>Content:</strong>
   <%= markdown(@article.text) %>

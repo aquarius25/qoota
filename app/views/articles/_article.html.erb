@@ -24,6 +24,7 @@
     <% end %>
     <%= link_to root_path, class: "card-link" do %>
       <i class="far fa-heart"></i>
-    <% end %>
+    <% end %><br />
+    tag_list:<%= render "articles/label_list", label_list: article.interest_list %>
   </div>
 </div>
