@@ -1,0 +1,32 @@
+<%= form_with(model: simplified_chart, local: true) do |form| %>
+  <% if simplified_chart.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(simplified_chart.errors.count, "error") %> prohibited this simplified_chart from being saved:</h2>
+
+      <ul>
+      <% simplified_chart.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :item %><br>
+    <%= form.select :item, [["vim", "vim"], ["ruby", "ruby"], ["linux", "linux"]] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :word %><br>
+    <%= form.text_field :word %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %><br>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :simplified_charts
   resources :todos
   resources :qiita_items
   devise_for :users, controllers: {
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
     end
   end
   resources :qiita_items
+  resources :simplified_charts
 end

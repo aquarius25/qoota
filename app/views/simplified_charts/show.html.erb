@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @simplified_chart.item %>
+</p>
+
+<p>
+  <strong>Word:</strong>
+  <%= @simplified_chart.word %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @simplified_chart.content %>
+</p>
+
+<%= link_to 'Edit', edit_simplified_chart_path(@simplified_chart) %> |
+<%= link_to 'Back', simplified_charts_path %>
