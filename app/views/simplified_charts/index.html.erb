@@ -1,0 +1,41 @@
+<%= render partial: "shared/header" %>
+
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'New Simplified Chart', new_simplified_chart_path %>
+
+<h1>Simplified Charts</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <P>VIM</p>
+      <% @about_vims.each do |v| %>
+        <tr>
+          <td><%= v.word %></td>
+          <td><%= v.content %></td></br>
+        </tr>
+      <% end %>
+    </div>
+    <div class="col-lg-4">
+      <P>RUBY</p>
+      <% @about_rubys.map do |r| %>
+        <tr>
+          <td><%= r.word %></td>
+          <td><%= r.content %></td></br>
+        </tr>
+      <% end %>
+    </div>
+    <div class="col-lg-4">
+      <P>LINUX</p>
+      <% @about_linuxs.each do |l| %>
+        <tr>
+          <td><%= l.word %></td>
+          <td><%= l.content %></td></br>
+        </tr>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<br>
