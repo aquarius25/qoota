@@ -4,10 +4,10 @@ class SimplifiedChartsController < ApplicationController
   # GET /simplified_charts
   # GET /simplified_charts.json
   def index
-    @simplified_charts = SimplifiedChart.all
-    @about_vims = SimplifiedChart.item_vim
-    @about_rubys = SimplifiedChart.item_ruby
-    @about_linuxs = SimplifiedChart.item_linux
+    simplified_charts = SimplifiedChart.all
+    @about_vims = simplified_charts.select { |h| h[:item] == "vim" }
+    @about_rubys = simplified_charts.select { |h| h[:item] == "ruby" }
+    @about_linuxs = simplified_charts.select { |h| h[:item] == "linux" }
   end
 
   # GET /simplified_charts/1
