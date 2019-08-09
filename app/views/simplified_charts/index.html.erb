@@ -19,7 +19,7 @@
     </div>
     <div class="col-lg-4">
       <P>RUBY</p>
-      <% @about_rubys.map do |r| %>
+      <% @about_rubys.each do |r| %>
         <tr>
           <td><%= r.word %></td>
           <td><%= r.content %></td></br>
