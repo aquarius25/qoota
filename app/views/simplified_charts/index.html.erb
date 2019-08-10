@@ -13,30 +13,42 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-4">
-      <P>VIM</p>
+      <P>- VIM -</p>
       <% @about_vims.each do |v| %>
         <tr>
-          <td><%= v.word %></td>
-          <td><%= v.content %></td></br>
-        </tr>
+          <td>
+            <strong><%= v.word %></strong>
+          </td></br>
+          <td>
+            <%= v.content %>
+          </td></br>
+        </tr></br>
       <% end %>
     </div>
     <div class="col-lg-4">
-      <P>RUBY</p>
+      <P>- RUBY -</p>
       <% @about_rubys.each do |r| %>
         <tr>
-          <td><%= r.word %></td>
-          <td><%= r.content %></td></br>
-        </tr>
+          <td>
+            <strong><%= r.word %></strong>
+          </td></br>
+          <td>
+            <%= r.content %>
+          </td></br>
+        </tr></br>
       <% end %>
     </div>
     <div class="col-lg-4">
-      <P>LINUX</p>
+      <P>- LINUX -</p>
       <% @about_linuxs.each do |l| %>
         <tr>
-          <td><%= l.word %></td>
-          <td><%= l.content %></td></br>
-        </tr>
+          <td>
+            <strong><%= l.word %></strong>
+          </td></br>
+          <td>
+            <%= l.content %>
+          </td></br>
+        </tr></br>
       <% end %>
     </div>
   </div>
