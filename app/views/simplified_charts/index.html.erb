@@ -20,7 +20,9 @@
             <strong><%= v.word %></strong>
           </td></br>
           <td>
-            <%= v.content %>
+            <%= v.content %></br>
+            <%= link_to "e", edit_simplified_chart_path(v.id) %>
+            <%= link_to "d", simplified_chart_path(v.id), method: :delete, data: { confirm: 'Are you sure?' } %>
           </td></br>
         </tr></br>
       <% end %>
@@ -33,7 +35,9 @@
             <strong><%= r.word %></strong>
           </td></br>
           <td>
-            <%= r.content %>
+            <%= r.content %></br>
+            <%= link_to "e", edit_simplified_chart_path(r.id) %>
+            <%= link_to "d", simplified_chart_path(r.id), method: :delete, data: { confirm: 'Are you sure?' } %>
           </td></br>
         </tr></br>
       <% end %>
@@ -46,7 +50,9 @@
             <strong><%= l.word %></strong>
           </td></br>
           <td>
-            <%= l.content %>
+            <%= l.content %></br>
+            <%= link_to "e", edit_simplified_chart_path(l.id) %>
+            <%= link_to "d", simplified_chart_path(l.id), method: :delete, data: { confirm: 'Are you sure?' } %>
           </td></br>
         </tr></br>
       <% end %>
