@@ -1,8 +1,6 @@
 class SimplifiedChartsController < ApplicationController
   before_action :set_simplified_chart, only: [:show, :edit, :update, :destroy]
 
-  # GET /simplified_charts
-  # GET /simplified_charts.json
   def index
     simplified_charts = SimplifiedChart.all
     @about_vims = simplified_charts.select { |h| h[:item] == "vim" }
@@ -11,22 +9,16 @@ class SimplifiedChartsController < ApplicationController
     @about_gits = simplified_charts.select { |h| h[:item] == "git" }
   end
 
-  # GET /simplified_charts/1
-  # GET /simplified_charts/1.json
   def show
   end
 
-  # GET /simplified_charts/new
   def new
     @simplified_chart = SimplifiedChart.new
   end
 
-  # GET /simplified_charts/1/edit
   def edit
   end
 
-  # POST /simplified_charts
-  # POST /simplified_charts.json
   def create
     @simplified_chart = SimplifiedChart.new(simplified_chart_params)
 
@@ -41,8 +33,6 @@ class SimplifiedChartsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /simplified_charts/1
-  # PATCH/PUT /simplified_charts/1.json
   def update
     respond_to do |format|
       if @simplified_chart.update(simplified_chart_params)
@@ -55,8 +45,6 @@ class SimplifiedChartsController < ApplicationController
     end
   end
 
-  # DELETE /simplified_charts/1
-  # DELETE /simplified_charts/1.json
   def destroy
     @simplified_chart.destroy
     respond_to do |format|
