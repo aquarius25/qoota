@@ -12,7 +12,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-lg-3">
       <P>- VIM -</p>
       <% @about_vims.each do |v| %>
         <tr>
@@ -27,7 +27,7 @@
         </tr></br>
       <% end %>
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-3">
       <P>- RUBY -</p>
       <% @about_rubys.each do |r| %>
         <tr>
@@ -42,7 +42,7 @@
         </tr></br>
       <% end %>
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-3">
       <P>- LINUX -</p>
       <% @about_linuxs.each do |l| %>
         <tr>
@@ -53,6 +53,21 @@
             <%= l.content %></br>
             <%= link_to "e", edit_simplified_chart_path(l.id) %>
             <%= link_to "d", simplified_chart_path(l.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td></br>
+        </tr></br>
+      <% end %>
+    </div>
+    <div class="col-lg-3">
+      <P>- GIT -</p>
+      <% @about_gits.each do |g| %>
+        <tr>
+          <td>
+            <strong><%= g.word %></strong>
+          </td></br>
+          <td>
+            <%= g.content %></br>
+            <%= link_to "e", edit_simplified_chart_path(g.id) %>
+            <%= link_to "d", simplified_chart_path(g.id), method: :delete, data: { confirm: 'Are you sure?' } %>
           </td></br>
         </tr></br>
       <% end %>

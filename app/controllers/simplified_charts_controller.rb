@@ -8,6 +8,7 @@ class SimplifiedChartsController < ApplicationController
     @about_vims = simplified_charts.select { |h| h[:item] == "vim" }
     @about_rubys = simplified_charts.select { |h| h[:item] == "ruby" }
     @about_linuxs = simplified_charts.select { |h| h[:item] == "linux" }
+    @about_gits = simplified_charts.select { |h| h[:item] == "git" }
   end
 
   # GET /simplified_charts/1
