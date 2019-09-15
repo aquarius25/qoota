@@ -80,7 +80,6 @@ gem "devise"
 gem 'jquery-rails'
 gem 'bootstrap'
 gem "rouge"
-gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'redcarpet'
