@@ -1,0 +1,2 @@
+module QiitaApisHelper
+end
