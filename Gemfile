@@ -89,4 +89,3 @@ gem "faraday"
 gem "kaminari"
 gem 'dotenv-rails'
 gem "acts-as-taggable-on"
-gem "acts_as_follower", github: "tcocca/acts_as_follower"

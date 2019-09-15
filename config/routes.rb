@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :simplified_charts
   resources :todos
-  resources :qiita_items
+  get "qiita_apis/index", to: "qiita_apis#index"
   devise_for :users, controllers: {
         registrations: 'users/registrations'
   }
@@ -12,6 +12,4 @@ Rails.application.routes.draw do
       get :my_article
     end
   end
-  resources :qiita_items
-  resources :simplified_charts
 end
