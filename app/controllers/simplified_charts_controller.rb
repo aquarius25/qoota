@@ -9,9 +9,6 @@ class SimplifiedChartsController < ApplicationController
     @about_gits = simplified_charts.select { |h| h[:item] == "git" }
   end
 
-  def show
-  end
-
   def new
     @simplified_chart = SimplifiedChart.new
   end
@@ -24,10 +21,10 @@ class SimplifiedChartsController < ApplicationController
 
     respond_to do |format|
       if @simplified_chart.save
-        format.html { redirect_to @simplified_chart, notice: 'Simplified chart was successfully created.' }
-        format.json { render :show, status: :created, location: @simplified_chart }
+        format.html { redirect_to simplified_charts_path, notice: 'Simplified chart was successfully created.' }
+        format.json { render :index, status: :created, location: @simplified_chart }
       else
-        format.html { render :new }
+        format.html { render :index }
         format.json { render json: @simplified_chart.errors, status: :unprocessable_entity }
       end
     end
@@ -36,7 +33,7 @@ class SimplifiedChartsController < ApplicationController
   def update
     respond_to do |format|
       if @simplified_chart.update(simplified_chart_params)
-        format.html { redirect_to @simplified_chart, notice: 'Simplified chart was successfully updated.' }
+        format.html { redirect_to simplified_charts_path, notice: 'Simplified chart was successfully updated.' }
         format.json { render :show, status: :ok, location: @simplified_chart }
       else
         format.html { render :edit }
@@ -48,7 +45,7 @@ class SimplifiedChartsController < ApplicationController
   def destroy
     @simplified_chart.destroy
     respond_to do |format|
-      format.html { redirect_to simplified_charts_url, notice: 'Simplified chart was successfully destroyed.' }
+      format.html { redirect_to simplified_charts_path, notice: 'Simplified chart was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
