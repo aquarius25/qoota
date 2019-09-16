@@ -1,1 +1,18 @@
-a
+<%= render partial: "shared/header" %>
+
+<%= form_tag(qiita_apis_index_path, method: "get") do %>
+  <%= label_tag("Search for:") %>
+  <%= text_field_tag :tag, "", placeholder: "keyword_tag", required: true %>
+  <%= date_field_tag :update_at, "", placeholder: "last_update_day", required: true %>
+  <%= number_field_tag :stocks, "", placeholder: "stock_lengths", required: true %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<h1><%= params[:tag] %>記事一覧</h1>
+<ol>
+  <% @items.each do |item| %>
+    <li><%= link_to item[:title], item[:url], target: '_blank' %>(<%= item[:likes_count] %>いいね)</li>
+  <% end %>
+</ol>
+
+<%= render partial: "shared/footer" %>
